@@ -1,0 +1,17 @@
+backend:
+  name: github
+  branch: master
+  repo: stolinski/progatsby2   change this
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: 'thoughts'
+    label: 'Thoughts'
+    folder: 'src/thoughts'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Thoughts', name: 'title', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
