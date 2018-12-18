@@ -2,9 +2,14 @@ module.exports = {
   siteMetadata: {
     title: "Nik's Blog",
     description: "Nik Cochran's website and blog",
+    siteUrl: 'https://',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -31,6 +36,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/posts`,
         name: 'posts',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/images`,
+        name: 'images',
       },
     },
     'gatsby-transformer-remark',
