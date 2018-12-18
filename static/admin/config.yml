@@ -7,11 +7,11 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'thoughts'
-    label: 'Thoughts'
-    folder: 'src/thoughts'
+  - name: 'posts'
+    label: 'Posts'
+    folder: 'src/posts'
     create: true
     slug: '{{slug}}'
     fields:
-      - { label: 'Thoughts', name: 'title', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
