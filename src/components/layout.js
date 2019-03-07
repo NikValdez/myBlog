@@ -1,21 +1,21 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import { graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import { Spring } from 'react-spring'
+import PropTypes from 'prop-types'
+import React from 'react'
 import Helmet from 'react-helmet'
+import { Spring } from 'react-spring'
 import styled from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
-import Archive from './archive'
-
+import img from '../images/gear.png'
 import Header from './header'
 import './layout.css'
 
 const MainLayout = styled.main`
-  max-width: 90%;
+  /* max-width: 90%; */
   margin: 1rem auto;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 2fr;
   grid-gap: 40px;
+  background-image: url(${img});
 `
 
 const Layout = ({ children, location }) => (
@@ -63,10 +63,7 @@ const Layout = ({ children, location }) => (
           )}
         </Spring>
 
-        <MainLayout>
-          <div>{children}</div>
-          <Archive />
-        </MainLayout>
+        <MainLayout>{children}</MainLayout>
       </>
     )}
   />

@@ -42,7 +42,7 @@ const NavStyles = styled.ul`
     }
     &:after {
       height: 2px;
-      background: #20bcff;
+      background: black;
       content: '';
       width: 0;
       position: absolute;
@@ -96,7 +96,7 @@ const Logo = styled.h1`
   transform: skew(-7deg);
   a {
     padding: 0.5rem 1rem;
-    background: #2853c3;
+    background: black;
     color: white;
     text-transform: uppercase;
     text-decoration: none;
