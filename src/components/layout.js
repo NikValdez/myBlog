@@ -16,6 +16,7 @@ const MainLayout = styled.main`
   grid-template-columns: 2fr 2fr;
   grid-gap: 40px;
   background-image: url(${img});
+  background-size: 90%;
 `
 
 const Layout = ({ children, location }) => (

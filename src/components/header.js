@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import NikImage from '../images/nikcochran.png'
+import { SocialIcons } from './socialIcons'
 
 const NavStyles = styled.ul`
   margin: 0;
@@ -117,6 +118,7 @@ const Header = ({ siteTitle }) => (
         <>
           <Link to="/select_classes">Select Classes</Link>
           <Link to="/calendar">Calendar</Link>
+          <SocialIcons />
           <Link to="/about">
             About{' '}
             <img src={NikImage} alt="Gatsby Logo" style={{ width: '80px' }} />

@@ -1,7 +1,17 @@
 import React, { Component } from 'react'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { FiXCircle } from 'react-icons/fi'
+import ReactModal from 'react-modal'
 import styled from 'styled-components'
+
 const IconStyles = styled.div`
+  .close {
+    float: right;
+    svg {
+      font-size: 50px;
+      color: white;
+    }
+  }
   ul {
     position: absolute;
     top: 50%;
@@ -126,36 +136,70 @@ const IconStyles = styled.div`
 `
 
 export class SocialIcons extends Component {
+  state = {
+    showModal: false,
+  }
+
+  handleOpenModal = () => {
+    this.setState({ showModal: true })
+  }
+
+  handleCloseModal = () => {
+    this.setState({ showModal: false })
+  }
+
   render() {
     return (
-      <IconStyles>
-        <ul>
-          <li>
-            <a href="#">
-              <FaFacebook />
-              <span> - Facebook</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <FaTwitter />
-              <span> - Twitter</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fa fa-google-plus" aria-hidden="true" />
-              <span> - Google</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <FaInstagram />
-              <span> - Instagram</span>
-            </a>
-          </li>
-        </ul>
-      </IconStyles>
+      <>
+        <button onClick={this.handleOpenModal}>Social</button>
+        <ReactModal
+          isOpen={this.state.showModal}
+          contentLabel="modal"
+          // onRequestClose={this.handleCloseModal}
+          shouldCloseOnOverlayClick={true}
+          style={{
+            overlay: {
+              backgroundColor: '#000000c7',
+            },
+            content: {
+              backgroundColor: '#0000008f',
+              border: 'none',
+            },
+          }}
+        >
+          <IconStyles>
+            <span className="close" onClick={this.handleCloseModal}>
+              <FiXCircle />
+            </span>
+            <ul>
+              <li>
+                <a href="#">
+                  <FaFacebook />
+                  <span> - Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <FaTwitter />
+                  <span> - Twitter</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="fa fa-google-plus" aria-hidden="true" />
+                  <span> - Google</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <FaInstagram />
+                  <span> - Instagram</span>
+                </a>
+              </li>
+            </ul>
+          </IconStyles>
+        </ReactModal>
+      </>
     )
   }
 }
