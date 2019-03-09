@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { FaFacebook, FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa'
 import { FiXCircle } from 'react-icons/fi'
 import ReactModal from 'react-modal'
 import styled from 'styled-components'
@@ -115,13 +115,13 @@ const IconStyles = styled.div`
   }
 
   ul li:hover:nth-child(3) a {
-    background: #dd4b39;
+    background: #333;
   }
   ul li:hover:nth-child(3) a:before {
-    background: #b33a2b;
+    background: #737070;
   }
   ul li:hover:nth-child(3) a:after {
-    background: #e66a5a;
+    background: #8c8a8a;
   }
 
   ul li:hover:nth-child(4) a {
@@ -134,6 +134,8 @@ const IconStyles = styled.div`
     background: #e46880;
   }
 `
+
+ReactModal.setAppElement('*')
 
 export class SocialIcons extends Component {
   state = {
@@ -151,7 +153,7 @@ export class SocialIcons extends Component {
   render() {
     return (
       <>
-        <button onClick={this.handleOpenModal}>Social</button>
+        <h1 onClick={this.handleOpenModal}>Social</h1>
         <ReactModal
           isOpen={this.state.showModal}
           contentLabel="modal"
@@ -186,8 +188,8 @@ export class SocialIcons extends Component {
               </li>
               <li>
                 <a href="#">
-                  <i className="fa fa-google-plus" aria-hidden="true" />
-                  <span> - Google</span>
+                  <FaGithub />
+                  <span> - GitHub</span>
                 </a>
               </li>
               <li>

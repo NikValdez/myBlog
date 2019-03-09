@@ -1,130 +1,84 @@
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import NikImage from '../images/nikcochran.png'
-import { SocialIcons } from './socialIcons'
-
-const NavStyles = styled.ul`
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-self: end;
-  font-size: 1.5rem;
-  a,
-  button {
-    padding: 1rem 3rem;
-    display: flex;
-    align-items: center;
-    position: relative;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 1em;
-    background: none;
-    border: 0;
-    text-decoration: none;
-    cursor: pointer;
-    color: black;
-    font-weight: 800;
-    @media (max-width: 700px) {
-      font-size: 10px;
-      padding: 0 10px;
-    }
-    &:before {
-      content: '';
-      width: 1px;
-      background: grey;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      transform: skew(-20deg);
-      top: 0;
-      bottom: 0;
-    }
-    &:after {
-      height: 2px;
-      background: black;
-      content: '';
-      width: 0;
-      position: absolute;
-      transform: translateX(-50%);
-      transition: width 0.4s;
-      transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
-      left: 50%;
-      margin-top: 2rem;
-    }
-    &:hover,
-    &:focus {
-      outline: none;
-      &:after {
-        width: calc(100% - 60px);
-      }
-    }
-  }
-  @media (max-width: 1300px) {
-    border-top: 1px solid grey;
-    width: 100%;
-    justify-content: center;
-    font-size: 1.5rem;
-  }
-`
+import SocialIcons from './socialIcons'
+import Title from './title'
 
 const StyledHeader = styled.header`
-  .bar {
-    border-bottom: 10px solid black;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    justify-content: space-between;
-    align-items: stretch;
-    @media (max-width: 1300px) {
-      grid-template-columns: 1fr;
-      justify-content: center;
-    }
+  background: 400px;
+  h1 {
+    font-family: verdana, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
   }
-  .sub-bar {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    border-bottom: 1px solid grey;
-  }
-`
 
-const Logo = styled.h1`
-  font-size: 2rem;
-  margin-left: 0.5rem;
-  position: relative;
-  margin-top: 2rem;
-  z-index: 2;
-  transform: skew(-7deg);
   a {
-    padding: 0.5rem 1rem;
-    background: black;
-    color: white;
-    text-transform: uppercase;
     text-decoration: none;
   }
-  @media (max-width: 1300px) {
-    margin: 0;
-    text-align: center;
+
+  #btn1 {
+    top: 100px;
+  }
+
+  #btn2 {
+    top: 200px;
+  }
+
+  #btn3 {
+    top: 300px;
+  }
+
+  div.button {
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    width: 500px;
+    height: 60px;
+    position: fixed;
+    left: -435px;
+    transition: 0.7s ease;
+    z-index: 999;
+    box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  div.button:hover {
+    background-color: #ffffff;
+    position: fixed;
+    left: -50px;
+    width: 600px;
+    border-radius: 0px;
+    box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+    border-bottom: 4px solid black;
+  }
+
+  div.button:active {
+    background-color: black;
+    transition: 0s;
+    color: #ecf0f1;
   }
 `
 
 const Header = ({ siteTitle }) => (
   <StyledHeader>
+    <Title />
     <div className="bar">
-      <Logo>
-        <Link to="/">Nik Cochran</Link>
-      </Logo>
-      <NavStyles>
-        <>
-          <Link to="/select_classes">Select Classes</Link>
-          <Link to="/calendar">Calendar</Link>
-          <SocialIcons />
-          <Link to="/about">
-            About{' '}
-            <img src={NikImage} alt="Gatsby Logo" style={{ width: '80px' }} />
-          </Link>
-        </>
-      </NavStyles>
+      <div id="btn1" className="button">
+        <SocialIcons />
+      </div>
+
+      <a href="https://www.example">
+        <div id="btn2" className="button">
+          <h1>Blog</h1>
+        </div>
+      </a>
+
+      <a href="https://www.example.co.uk">
+        <div id="btn3" className="button">
+          <h1>ABOUT</h1>
+        </div>
+      </a>
     </div>
   </StyledHeader>
 )

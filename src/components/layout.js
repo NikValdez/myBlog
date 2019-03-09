@@ -16,7 +16,8 @@ const MainLayout = styled.main`
   grid-template-columns: 2fr 2fr;
   grid-gap: 40px;
   background-image: url(${img});
-  background-size: 90%;
+
+  background-size: 100%;
 `
 
 const Layout = ({ children, location }) => (
@@ -54,8 +55,8 @@ const Layout = ({ children, location }) => (
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <Spring
-          from={{ height: location.pathname === '/' ? 200 : 300 }}
-          to={{ height: location.pathname === '/' ? 300 : 200 }}
+          from={{ height: location.pathname === '/' ? 200 : 500 }}
+          to={{ height: location.pathname === '/' ? 500 : 200 }}
         >
           {styles => (
             <div style={{ overflow: 'hidden', ...styles }}>

@@ -1,6 +1,7 @@
 import { graphql, Link, StaticQuery } from 'gatsby'
 import React, { Component } from 'react'
 import styled from 'styled-components'
+// import './styles/modal.css'
 
 const Post = styled.article`
   background: #fff;
@@ -15,7 +16,7 @@ const Post = styled.article`
   border-radius: 5px;
   margin-bottom: 1rem;
   background: #00000040;
-  height: 30vh;
+  height: 35vh;
   width: 55vh;
 
   a {
@@ -149,7 +150,6 @@ const Post = styled.article`
         z-index: -1;
         width: 100%;
         height: 100%;
-        /* background: transparent; */
         box-shadow: inset 0px 0px 0px white;
         display: block;
         -webkit-transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
@@ -182,6 +182,7 @@ const LISTING_QUERY = graphql`
     }
   }
 `
+
 class Listing extends Component {
   state = {
     hovered: false,
