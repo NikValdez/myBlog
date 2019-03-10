@@ -3,6 +3,7 @@ import { FaFacebook, FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa'
 import { FiXCircle } from 'react-icons/fi'
 import ReactModal from 'react-modal'
 import styled from 'styled-components'
+import './style.css'
 
 const IconStyles = styled.div`
   .close {
@@ -187,7 +188,7 @@ export class SocialIcons extends Component {
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="https://github.com/nikvaldez" target="_blank">
                   <FaGithub />
                   <span> - GitHub</span>
                 </a>

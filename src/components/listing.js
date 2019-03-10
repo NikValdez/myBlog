@@ -1,7 +1,6 @@
 import { graphql, Link, StaticQuery } from 'gatsby'
 import React, { Component } from 'react'
 import styled from 'styled-components'
-// import './styles/modal.css'
 
 const Post = styled.article`
   background: #fff;

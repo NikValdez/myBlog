@@ -5,12 +5,12 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Spring } from 'react-spring'
 import styled from 'styled-components'
+import favicon from '../images/gatsby-icon.png'
 import img from '../images/gear.png'
 import Header from './header'
 import './layout.css'
 
 const MainLayout = styled.main`
-  /* max-width: 90%; */
   margin: 1rem auto;
   display: grid;
   grid-template-columns: 2fr 2fr;
@@ -49,6 +49,9 @@ const Layout = ({ children, location }) => (
               content: data.site.siteMetadata.description,
             },
             { name: 'keywords', content: 'sample, something' },
+          ]}
+          link={[
+            { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
           ]}
         >
           <html lang="en" />
