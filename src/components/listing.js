@@ -1,7 +1,8 @@
 import { graphql, Link, StaticQuery } from 'gatsby'
 import React, { Component } from 'react'
+import { Transition } from 'react-spring'
 import styled from 'styled-components'
-
+import BlogHeader from './blogHeader'
 const Post = styled.article`
   background: #fff;
   text-align: left;
@@ -185,28 +186,59 @@ const LISTING_QUERY = graphql`
 class Listing extends Component {
   state = {
     hovered: false,
+    show: false,
+  }
+
+  scrollMe = () => {
+    this.setState({
+      show: true,
+    })
   }
   render() {
     return (
-      <StaticQuery
-        query={LISTING_QUERY}
-        render={({ allMarkdownRemark }) =>
-          allMarkdownRemark.edges.map(({ node }) => (
-            <Post key={node.frontmatter.slug}>
-              <Link to={`/posts${node.frontmatter.slug}`}>
-                <h2>
-                  <span className="btn5">{node.frontmatter.title}</span>
-                </h2>
-              </Link>
-              <p>{node.frontmatter.date}</p>
-              <p className="exert">{node.excerpt}</p>
-              <Link className="read-more" to={`/posts${node.frontmatter.slug}`}>
-                <span className="btn5">Read More</span>
-              </Link>
-            </Post>
-          ))
-        }
-      />
+      <>
+        <BlogHeader scrollMe={this.scrollMe} />
+        <StaticQuery
+          query={LISTING_QUERY}
+          render={({ allMarkdownRemark }) =>
+            allMarkdownRemark.edges.map(({ node }) => (
+              <>
+                <Transition
+                  items={this.state.show}
+                  from={{ opacity: 0, height: 100 }}
+                  enter={{ opacity: 1, height: 350 }}
+                  config={{ delay: 300, duration: 2000 }}
+                >
+                  {show =>
+                    show &&
+                    (props => (
+                      <div style={props}>
+                        <Post key={node.frontmatter.slug} id="posts">
+                          <Link to={`/posts${node.frontmatter.slug}`}>
+                            <h2>
+                              <span className="btn5">
+                                {node.frontmatter.title}
+                              </span>
+                            </h2>
+                          </Link>
+                          <p>{node.frontmatter.date}</p>
+                          <p className="exert">{node.excerpt}</p>
+                          <Link
+                            className="read-more"
+                            to={`/posts${node.frontmatter.slug}`}
+                          >
+                            <span className="btn5">Read More</span>
+                          </Link>
+                        </Post>
+                      </div>
+                    ))
+                  }
+                </Transition>
+              </>
+            ))
+          }
+        />
+      </>
     )
   }
 }

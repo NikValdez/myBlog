@@ -9,12 +9,14 @@ import Title from './title'
 
 const StyledHeader = styled.header`
   color: blue;
+
   .header {
     height: 80vh;
     background-image: url(${NikCochran});
     background: cover;
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.51);
   }
 
   h1 {
@@ -65,11 +67,37 @@ const StyledHeader = styled.header`
     transition: 0s;
     color: #ecf0f1;
   }
+
+  #intro {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    color: white;
+    p {
+      color: white;
+      font-family: inter-thin;
+      font-size: 22px;
+    }
+  }
 `
 
 const Header = ({ siteTitle }) => (
   <>
     <StyledHeader>
+      <Spring
+        from={{ opacity: 0 }}
+        to={{ opacity: 1 }}
+        config={{ delay: 1500, duration: 2000 }}
+      >
+        {props => (
+          <div id="intro" style={props}>
+            <p>Sometimes I have thoughts.</p>
+            <p>Sometimes I share those thoughts.</p>
+            <p>This is where I have and share some of my thoughts.</p>
+          </div>
+        )}
+      </Spring>
+
       <Spring
         from={{ opacity: 0, height: 100 }}
         to={{ opacity: 1, height: 600 }}
@@ -78,6 +106,7 @@ const Header = ({ siteTitle }) => (
       </Spring>
 
       <Title />
+
       <div className="bar">
         <div id="wave1" className="button btn1">
           <SocialIcons />
