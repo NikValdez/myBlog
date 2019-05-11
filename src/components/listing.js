@@ -4,7 +4,7 @@ import { Transition } from 'react-spring'
 import styled from 'styled-components'
 import BlogHeader from './blogHeader'
 const Post = styled.article`
-  background: #fff;
+  /* background: #fff; */
   text-align: left;
   padding-left: 20px;
   transform: rotate(-30deg) skew(25deg) translate(0, 0);
@@ -15,7 +15,7 @@ const Post = styled.article`
   padding: 1rem;
   border-radius: 5px;
   margin-bottom: 1rem;
-  background: #00000040;
+  /* background: #00000040; */
   height: 35vh;
   width: 55vh;
 
@@ -102,7 +102,7 @@ const Post = styled.article`
         box-shadow: inset 0px 0px 0px white;
         display: block;
         -webkit-transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
-        transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
+        transition: all 0.9s cubic-bezier(0.5, 0.24, 0, 1);
       }
       /* if you want it to show from the right use -300px instead */
       .btn5:hover::before {
@@ -153,7 +153,7 @@ const Post = styled.article`
         box-shadow: inset 0px 0px 0px white;
         display: block;
         -webkit-transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
-        transition: all 0.4s cubic-bezier(0.5, 0.24, 0, 1);
+        transition: all 0.9s cubic-bezier(0.5, 0.24, 0, 1);
       }
       /* if you want it to show from the right use -300px instead */
       .btn5:hover::before {
@@ -205,9 +205,9 @@ class Listing extends Component {
               <>
                 <Transition
                   items={this.state.show}
-                  from={{ opacity: 0, height: 100 }}
+                  from={{ opacity: 0, height: 0 }}
                   enter={{ opacity: 1, height: 350 }}
-                  config={{ delay: 300, duration: 2000 }}
+                  config={{ delay: 300, duration: 1500 }}
                 >
                   {show =>
                     show &&

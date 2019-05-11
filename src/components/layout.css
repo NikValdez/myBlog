@@ -21,6 +21,15 @@
   font-family: 'inter-light';
   src: url('../inter/Inter-Light-BETA.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'playfair-bold';
+  src: url('../playfair-display/PlayfairDisplay-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'playfair-regular';
+  src: url('../playfair-display/PlayfairDisplay-Regular.ttf') format('truetype');
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -252,7 +261,7 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: inter-bold, sans-serif;
+  font-family: playfair-bold, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;

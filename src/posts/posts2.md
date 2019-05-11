@@ -1,7 +1,7 @@
 ---
 slug: '/second-post'
 date: '2018-10-15'
-title: 'Our Second Post'
+title: 'Incentives'
 ---
 
 #yo

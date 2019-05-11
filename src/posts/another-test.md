@@ -1,7 +1,7 @@
 ---
 slug: '/another-test'
 date: '2018-10-15'
-title: 'Another Test'
+title: 'A Case for Big Government'
 ---
 
 ## This is the test

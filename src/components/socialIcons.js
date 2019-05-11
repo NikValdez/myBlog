@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import './style.css'
 
 const IconStyles = styled.div`
+  z-index: 10000;
   .close {
     float: right;
     svg {
@@ -44,6 +45,7 @@ const IconStyles = styled.div`
     color: #262626;
     letter-spacing: 4px;
     transition: 0.5s;
+    font-family: playfair-bold;
   }
 
   ul li a {
@@ -158,11 +160,11 @@ export class SocialIcons extends Component {
         <ReactModal
           isOpen={this.state.showModal}
           contentLabel="modal"
-          // onRequestClose={this.handleCloseModal}
           shouldCloseOnOverlayClick={true}
           style={{
             overlay: {
               backgroundColor: '#000000c7',
+              zIndex: 10000,
             },
             content: {
               backgroundColor: '#0000008f',

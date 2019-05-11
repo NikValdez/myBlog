@@ -10,7 +10,7 @@ import Header from './header'
 import './layout.css'
 
 const MainLayout = styled.main`
-  margin: 1rem auto;
+  /* margin: 1rem auto; */
   display: grid;
   grid-template-columns: 2fr 2fr;
   grid-gap: 40px;

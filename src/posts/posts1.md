@@ -1,7 +1,7 @@
 ---
 slug: '/first-post'
 date: '2018-10-15'
-title: 'Our First Post'
+title: 'Climate Science has a Marketing Problem'
 ---
 
 #Hello

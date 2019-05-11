@@ -2,25 +2,23 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Spring } from 'react-spring'
 import styled from 'styled-components'
-import NikCochran from '../images/NikCochran.gif'
+import CinRiver from '../images/cinRiver.gif'
 import SocialIcons from './socialIcons'
 import './style.css'
 import Title from './title'
 
 const StyledHeader = styled.header`
-  color: blue;
+  /* color: blue; */
 
   .header {
-    height: 80vh;
-    background-image: url(${NikCochran});
-    background: cover;
+    background-image: url(${CinRiver});
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.51);
+    height: 100vh !important;
   }
 
   h1 {
-    font-family: verdana, sans-serif;
+    font-family: playfair-bold, sans-serif;
     font-weight: bold;
     text-align: center;
     position: relative;
@@ -70,14 +68,24 @@ const StyledHeader = styled.header`
 
   #intro {
     position: absolute;
-    top: 200px;
-    left: 200px;
+    top: 150px;
+    left: 100px;
     color: white;
     p {
       color: white;
-      font-family: inter-thin;
+      font-family: playfair-regular;
       font-size: 22px;
     }
+  }
+  .intro {
+    padding: 1.5px;
+  }
+  .intro:hover {
+    background: white;
+    color: black;
+    padding: 5px;
+    font-family: cursive;
+    font-size: 30px;
   }
 `
 
@@ -91,16 +99,106 @@ const Header = ({ siteTitle }) => (
       >
         {props => (
           <div id="intro" style={props}>
-            <p>Sometimes I have thoughts.</p>
-            <p>Sometimes I share those thoughts.</p>
-            <p>This is where I have and share some of my thoughts.</p>
+            <p>
+              <span className="intro">T</span>
+              <span className="intro">h</span>
+              <span className="intro">i</span>
+              <span className="intro">s</span>
+              <span className="intro"> </span>
+              <span className="intro">i</span>
+              <span className="intro">s</span>
+              <span className="intro"> </span>
+              <span className="intro">w</span>
+              <span className="intro">h</span>
+              <span className="intro">e</span>
+              <span className="intro">r</span>
+              <span className="intro">e</span>
+              <span className="intro"> </span>
+              <span className="intro">I</span>
+              <span className="intro"> </span>
+              <span className="intro">s</span>
+              <span className="intro">h</span>
+              <span className="intro">a</span>
+              <span className="intro">r</span>
+              <span className="intro">e</span>
+              <span className="intro"> </span>
+              <span className="intro">s</span>
+              <span className="intro">o</span>
+              <span className="intro">m</span>
+              <span className="intro">e</span>
+              <span className="intro"> </span>
+              <span className="intro">i</span>
+              <span className="intro">d</span>
+              <span className="intro">e</span>
+              <span className="intro">a</span>
+              <span className="intro">s</span>
+              <span className="intro"> </span>
+              <span className="intro">I</span>
+              <span className="intro">'</span>
+              <span className="intro">v</span>
+              <span className="intro">e</span>
+              <span className="intro"> </span>
+              <span className="intro">b</span>
+              <span className="intro">e</span>
+              <span className="intro">e</span>
+              <span className="intro">n</span>
+              <span className="intro"> </span>
+              <span className="intro">t</span>
+              <span className="intro">h</span>
+              <span className="intro">i</span>
+              <span className="intro">n</span>
+              <span className="intro">k</span>
+              <span className="intro">i</span>
+              <span className="intro">n</span>
+              <span className="intro">g</span>
+              <span className="intro"> </span>
+              <span className="intro">a</span>
+              <span className="intro">b</span>
+              <span className="intro">o</span>
+              <span className="intro">u</span>
+              <span className="intro">t</span>
+              <span className="intro">.</span>
+            </p>
+            <p>
+              <span className="intro">C</span>
+              <span className="intro">l</span>
+              <span className="intro">i</span>
+              <span className="intro">c</span>
+              <span className="intro">k</span>
+              <span className="intro"> </span>
+              <span className="intro">t</span>
+              <span className="intro">h</span>
+              <span className="intro">e</span>
+              <span className="intro"> </span>
+              <span className="intro">a</span>
+              <span className="intro">r</span>
+              <span className="intro">r</span>
+              <span className="intro">o</span>
+              <span className="intro">w</span>
+              <span className="intro"> </span>
+              <span className="intro">t</span>
+              <span className="intro">o</span>
+              <span className="intro"> </span>
+              <span className="intro">r</span>
+              <span className="intro">e</span>
+              <span className="intro">a</span>
+              <span className="intro">d</span>
+              <span className="intro"> </span>
+              <span className="intro">t</span>
+              <span className="intro">h</span>
+              <span className="intro">e</span>
+              <span className="intro">m</span>
+              <span className="intro">.</span>
+            </p>
           </div>
+          // is is where I share some ideas I've been thinking
+          // about.
         )}
       </Spring>
 
       <Spring
         from={{ opacity: 0, height: 100 }}
-        to={{ opacity: 1, height: 600 }}
+        to={{ opacity: 1, height: 650 }}
       >
         {props => <div style={props} className="header" />}
       </Spring>
@@ -112,15 +210,15 @@ const Header = ({ siteTitle }) => (
           <SocialIcons />
         </div>
 
-        <a href="#">
+        <a href="mailto:nikcochran@gmail.com" target="_top">
           <div id="wave2" className="button btn2">
-            <h1>Blog</h1>
+            <h1>Contact</h1>
           </div>
         </a>
 
         <a href="#">
           <div id="wave3" className="button btn3">
-            <h1>ABOUT</h1>
+            <h1>About</h1>
           </div>
         </a>
       </div>
