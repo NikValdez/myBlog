@@ -29,6 +29,10 @@
   font-family: 'playfair-regular';
   src: url('../playfair-display/PlayfairDisplay-Regular.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Avenger';
+  src: url('../playfair-display/AvengerFont.ttf') format('truetype');
+}
 
 html {
   font-family: sans-serif;
@@ -261,7 +265,7 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: playfair-bold, sans-serif;
+  font-family: Avenger, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;

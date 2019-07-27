@@ -73,19 +73,10 @@ const StyledHeader = styled.header`
     color: white;
     p {
       color: white;
-      font-family: playfair-regular;
-      font-size: 22px;
+      font-family: Avenger;
+      font-size: 28px;
+      letter-spacing: 3px;
     }
-  }
-  .intro {
-    padding: 1.5px;
-  }
-  .intro:hover {
-    background: white;
-    color: black;
-    padding: 5px;
-    font-family: cursive;
-    font-size: 30px;
   }
 `
 
